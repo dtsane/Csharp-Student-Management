@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Chuu\\Documents\\I_JUST_WANNA_SLEEP\\application_bureau_projet2\\Projet-App-Bureau\\Projet-App-Bureau.csproj": {}
+    "C:\\Users\\luxce\\Dropbox\\My PC (DESKTOP-EA7S6BR)\\Desktop\\application_bureau_projet2_12_dec\\Projet-App-Bureau\\Projet-App-Bureau.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Chuu\\Documents\\I_JUST_WANNA_SLEEP\\application_bureau_projet2\\Projet-App-Bureau\\Projet-App-Bureau.csproj": {
+    "C:\\Users\\luxce\\Dropbox\\My PC (DESKTOP-EA7S6BR)\\Desktop\\application_bureau_projet2_12_dec\\Projet-App-Bureau\\Projet-App-Bureau.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Chuu\\Documents\\I_JUST_WANNA_SLEEP\\application_bureau_projet2\\Projet-App-Bureau\\Projet-App-Bureau.csproj",
+        "projectUniqueName": "C:\\Users\\luxce\\Dropbox\\My PC (DESKTOP-EA7S6BR)\\Desktop\\application_bureau_projet2_12_dec\\Projet-App-Bureau\\Projet-App-Bureau.csproj",
         "projectName": "Projet-App-Bureau",
-        "projectPath": "C:\\Users\\Chuu\\Documents\\I_JUST_WANNA_SLEEP\\application_bureau_projet2\\Projet-App-Bureau\\Projet-App-Bureau.csproj",
-        "packagesPath": "C:\\Users\\Chuu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Chuu\\Documents\\I_JUST_WANNA_SLEEP\\application_bureau_projet2\\Projet-App-Bureau\\obj\\",
+        "projectPath": "C:\\Users\\luxce\\Dropbox\\My PC (DESKTOP-EA7S6BR)\\Desktop\\application_bureau_projet2_12_dec\\Projet-App-Bureau\\Projet-App-Bureau.csproj",
+        "packagesPath": "C:\\Users\\luxce\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\luxce\\Dropbox\\My PC (DESKTOP-EA7S6BR)\\Desktop\\application_bureau_projet2_12_dec\\Projet-App-Bureau\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Chuu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\luxce\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -67,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

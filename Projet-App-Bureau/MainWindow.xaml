@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projet_App_Bureau"
         mc:Ignorable="d"
-        Title="Gestion de stagiaires" Height="700" Width="800">
+        Title="Gestion de stagiaires" Height="800" Width="700">
 
     <StackPanel Background="Lavender" >
-        
+
         <!-- Les trois sections TabControl -->
         <TabControl Background="LightCoral" Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=ActualHeight}">
             <!-- Section Programmes -->
@@ -29,6 +29,8 @@
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
                     </Grid.RowDefinitions>
 
                     <!--Label titre formulaire-->
@@ -37,8 +39,8 @@
                            Grid.Row="0" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" VerticalAlignment="Center" />
 
                     <!-- *************************************************************************** -->
-                    <!--CroupBox Informations sur le stagiaire-->
-                    <GroupBox x:Name="label_Information_Programme" FontSize="16" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="3" Margin="10" Padding="20">
+                    <!--CroupBox Informations sur le programme-->
+                    <GroupBox x:Name="label_Information_Programme" FontSize="16" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="3" Margin="80 0 80 20">
 
                         <GroupBox.Header>
                             Informations sur le programme :
@@ -63,81 +65,90 @@
                             <!--Label numéro du programme-->
                             <Label x:Name="lblNumeroProgramme" Content="Numéro : " 
                                    Grid.Row="0" Grid.Column="0" 
-                                   FontSize="16" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="150 0 0 0"/>
+                                   FontSize="16" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 0 0 0"/>
 
                             <!--Label nom du programme-->
                             <Label x:Name="lblNomProgramme" Content="Nom : " 
                                    Grid.Row="1" Grid.Column="0" 
-                                   FontSize="16" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="150 0 0 0"/>
+                                   FontSize="16" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 0 0 0"/>
 
                             <!--Label durée du programme-->
                             <Label x:Name="lblDureeProgramme" Content="Durée : " 
                                    Grid.Row="2" Grid.Column="0" 
-                                   FontSize="16" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="150 0 0 0"/>
+                                   FontSize="16" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 0 0 0"/>
 
                             <!--TextBox numéro du programme-->
                             <TextBox x:Name="txtNumeroProgramme" 
                                      Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
-                                     FontSize="16" Width="250" Height="30" HorizontalAlignment="Left" Margin="0,10,0,10"/>
+                                     FontSize="16" Width="250" Height="30" HorizontalAlignment="Left" Margin="0,5,0,0"/>
 
                             <!--TextBox nom du programme-->
                             <TextBox x:Name="txtNomProgramme" 
                                      Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" 
-                                     FontSize="16"  Width="350" Height="30" HorizontalAlignment="Left" Margin="0,10,0,10"/>
+                                     FontSize="16"  Width="250" Height="30" HorizontalAlignment="Left" Margin="0,5,0,0"/>
 
                             <!--TextBox durée du programme-->
                             <TextBox x:Name="txtDureeProgramme" 
                                      Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
-                                     FontSize="16" Width="250" Height="30" HorizontalAlignment="Left" Margin="0,10,0,10"/>
+                                     FontSize="16" Width="250" Height="30" HorizontalAlignment="Left" Margin="0,5,0,0" TextChanged="txtDureeProgramme_TextChanged"/>
 
                         </Grid>
 
                     </GroupBox>
 
                     <!--Label Commandes-->
-                    <GroupBox x:Name="label_commandes" FontSize="16" Grid.Row="5" Grid.ColumnSpan="3" Margin="10 10 10 50" Padding="5">
+                    <GroupBox x:Name="label_commandes" FontSize="16" Grid.Row="4" Grid.ColumnSpan="3" Margin="80 0 80 0" >
                         <GroupBox.Header>
                             Commandes :
                         </GroupBox.Header>
-                        <Grid Height="60">
+                        <Grid>
                             <!--Définitions des colonnes-->
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
                             </Grid.ColumnDefinitions>
 
                             <!--Button ajouter un nouveau programme-->
-                            <Button x:Name="btnAjouter" Content="Ajouter"  Background="Lavender"
-                                    Grid.Row="4" Grid.Column="0" 
-                                    FontSize="16"  Height="40" Width="80" Margin="0 10"
-                                    Click="btnAjouterProgramme_Click" />
+                            <Button x:Name="btnAjouter" Content="Ajouter"  Background="Lavender" Grid.Column="0"
+                                    FontSize="16"  Height="40" Width="90" 
+                                    Click="btnAjouterProgramme_Click"  Margin="0,5,0,5"/>
 
-                            <!--Button annuler l'ajout d'un programme-->
-                            <Button x:Name="btnAnnuler" Content="Supprimer"  Background="Lavender"
-                                    Grid.Row="4" Grid.Column="1" 
-                                    FontSize="16"  Height="40" Width="100" Margin="0 10"
-                                    Click="btnSupprimerProgramme_Click" />
+                            <!--Button modifier un programme-->
+                            <Button x:Name="btnModifier" Content="Modifer"  Background="Lavender" Grid.Column="1"
+                                    FontSize="16"  Height="40" Width="90" 
+                                    Click="btnModifierProgramme_Click" Margin="0,5,0,5"/>
+
+                            <!--Button supprimer un programme-->
+                            <Button x:Name="btnAnnuler" Content="Supprimer"  Background="Lavender" Grid.Column="2"
+                                    FontSize="16"  Height="40" Width="90" 
+                                    Click="btnSupprimerProgramme_Click"  Margin="0,5,0,5"/>
 
                             <!--Button Effacer le contenu-->
-                            <Button x:Name="btnEffacer" Content="Effacer"  Background="Lavender"
-                                    Grid.Row="4" Grid.Column="3" 
-                                    FontSize="16"  Height="40" Width="80" Margin="0 0"
-                                    Click="btnEffacerProgramme_Click" />
+                            <Button x:Name="btnEffacer" Content="Effacer"  Background="Lavender" Grid.Column="3"
+                                    FontSize="16"  Height="40" Width="90" 
+                                    Click="btnEffacerProgramme_Click" Margin="0,5,0,5" />
+
                         </Grid>
                     </GroupBox>
-                    
+
+                    <DataGrid x:Name="dgProgramme" SelectionChanged="dgProgramme_SelectionChanged"
+                              Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="3" ColumnWidth="*"
+                              FontSize="14" Margin="80 20 80 60"/>
+
                 </Grid>
             </TabItem>
 
             <!-- Section Stagiaires -->
-            <TabItem Header="Stagiaires" FontSize="16" Height="40" Width="120" Background="Lavender">
+            <TabItem Header="Stagiaires" FontSize="16" Height="40" Width="120" Background="Lavender" >
                 <Grid>
                     <!--Définitions des colonnes-->
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
+                        <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
                     <!--Définitions des lignes-->
@@ -147,15 +158,16 @@
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
 
                     <!--Label titre formulaire-->
                     <Label x:Name="label_Titre" Content="La gestion des stagiaires" 
-                        FontSize="25" FontStyle="Italic"
-                        Grid.Row="0" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" VerticalAlignment="Center"/>
+                        FontSize="25" FontStyle="Italic" Grid.ColumnSpan="4" HorizontalContentAlignment="Center" VerticalAlignment="Center"/>
 
                     <!--CroupBox Informations sur le stagiaire-->
-                    <GroupBox x:Name="label_Information" FontSize="16" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="3" Margin="10" Padding="20">
+                    <GroupBox x:Name="label_Information" FontSize="16" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="5" Margin="10,10,10,10" Padding="20">
 
                         <GroupBox.Header>
                             Informations sur le stagiaire :
@@ -182,24 +194,24 @@
 
                             <!--Label Numéro-->
                             <Label x:Name="label_numero" Content="Numéro:"
-	                            FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="80 0 0 0" 
+	                            FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50 0 0 0" 
                                 Grid.Row="0" Grid.Column="0"/>
 
 
                             <!--Label Nom-->
                             <Label x:Name="label_nom" Content="Nom:"
-	                            FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="80 0 0 0"
+	                            FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50 0 0 0"
                                 Grid.Row="1"  Grid.Column="0"/>
 
 
                             <!--Label Prénom-->
                             <Label x:Name="label_prenom" Content="Prénom:"
-	                            FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="80 0 0 0" 
+	                            FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50 0 0 0" 
                                 Grid.Row="2"  Grid.Column="0"/>
 
                             <!--Label Date de naissance-->
                             <Label x:Name="label_dateNaissance" Content="Date de naissance:"
-	                            FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="80 0 0 0"
+	                            FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50 0 0 0"
                                 Grid.Row="3"  Grid.Column="0"/>
 
                             <!--TextBox Prénom-->
@@ -233,7 +245,7 @@
                                     Sexe :
                                 </GroupBox.Header>
 
-                                <Grid Height="50">
+                                <Grid Height="30">
 
                                     <!--Définitions des colonnes-->
                                     <Grid.ColumnDefinitions>
@@ -245,17 +257,17 @@
                                     <!--RadioButton Masculin-->
                                     <RadioButton x:Name="radioButton_masculin" Content="Masculin" 
                                                 VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" 
-                                                Grid.Column="0" Margin="0 10 0 10"/>
+                                                Grid.Column="0"/>
 
                                     <!--RadioButton Féminin-->
                                     <RadioButton x:Name="radioButton_feminin" Content="Feminin" 
                                                 VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"
-                                                Grid.Column="1" Margin="0 10 0 10"/>
+                                                Grid.Column="1"/>
 
                                     <!--RadioButton Autre-->
                                     <RadioButton x:Name="radioButton_autre" Content="Autre" 
                                                 VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"
-                                                Grid.Column="2" Margin="0 10 0 10"/>
+                                                Grid.Column="2"/>
 
                                 </Grid>
 
@@ -263,7 +275,7 @@
 
                             <!--Label Programme-->
                             <Label x:Name="label_programme" Content="Programme:" 
-	                            FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="80 0 0 0"
+	                            FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50 0 0 0"
                                 Grid.Row="5"  Grid.Column="0"/>
 
                             <!--ComboBox Programme-->
@@ -277,7 +289,7 @@
                     </GroupBox>
 
                     <!--Label Commandes-->
-                    <GroupBox x:Name="label_commandes_programme" FontSize="16" Grid.Row="5" Grid.ColumnSpan="3" Margin="10 10 10 50" Padding="5">
+                    <GroupBox x:Name="label_commandes_programme" FontSize="16" Grid.Row="4" Grid.ColumnSpan="4" Margin="10,10,10,10" Padding="5">
                         <GroupBox.Header>
                             Commandes :
                         </GroupBox.Header>
@@ -287,27 +299,40 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
+                                <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
 
                             <!--Button Ajouter-->
                             <Button x:Name="buttonAjouter" Content="Ajouter" Background="Lavender"
-                            HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="80" 
+                            HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="90"
                             Grid.Column="0" Margin="0 10"
                             FontSize="16" Click="buttonAjouterStagiaire_Click" />
 
                             <!--Button Effacer-->
                             <Button x:Name="buttonEffacer" Content="Effacer" Background="Lavender"
-                            HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="80" 
-                            Grid.Column="2" Margin="0 10" 
+                            HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="90" 
+                            Grid.Column="3" Margin="0 10" 
                             FontSize="16" Click="buttonEffacerStagiaire_Click"/>
 
                             <!--Button Supprimer-->
                             <Button x:Name="buttonSupprimer" Content="Supprimer" Background="Lavender"
-                            HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="100" 
+                            HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="90" 
                             Grid.Column="1" Margin="0 10"
                             FontSize="16" Click="buttonSupprimerStagiaire_Click"/>
+
+                            <!--Button Modifier-->
+                            <Button x:Name="buttonModifier" Content="Modifier" Background="Lavender"
+                            HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="90" 
+                            Grid.Column="2" Margin="0 10"
+                            FontSize="16" Click="buttonModifierStagiaire_Click" />
+
                         </Grid>
                     </GroupBox>
+
+                    <DataGrid x:Name="dgStagiaire" SelectionChanged="dgStagiaire_SelectionChanged"
+                              Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="4"  ColumnWidth="*"
+                              FontSize="14" Margin="10,10,10,50" />
+
                 </Grid>
             </TabItem>
 
@@ -352,11 +377,8 @@
                             <ComboBox x:Name="comboBoxConsulter" 
                                       Background="Lavender"
                                     HorizontalAlignment="Left" VerticalAlignment="Center" Width="250" Height="30" 
-                                    FontSize="16" Grid.Column="1" Grid.ColumnSpan="2"/>
+                                    FontSize="16" Grid.Column="1" Grid.ColumnSpan="2" SelectionChanged="cbxConsulter_SelectionChanged"/>
 
-                            <Button x:Name="btnRecherche" Content="Recherche" 
-                                Background="Lavender" FontSize="16" Grid.Column="2"
-                                Height="30" Width="100" Click="ButtonRecherche_Click" />
                         </Grid>
                     </GroupBox>
 
@@ -368,20 +390,22 @@
                             </Style>
                         </DataGrid.Resources>
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header=" Numero" FontSize="16" Binding="{Binding NumeroStagiaire}">
+                            <DataGridTextColumn Header=" Numero" FontSize="16" Binding="{Binding id_stagiaire}">
                             </DataGridTextColumn>
-                            <DataGridTextColumn Header=" Nom" FontSize="16" Binding="{Binding NomStagiaire}">
+                            <DataGridTextColumn Header=" Nom" FontSize="16" Binding="{Binding nom_stagiaire}">
                             </DataGridTextColumn>
-                            <DataGridTextColumn Header=" Prenom" FontSize="16" Binding="{Binding PrenomStagiaire}">
+                            <DataGridTextColumn Header=" Prenom" FontSize="16" Binding="{Binding prenom_stagiaire}">
                             </DataGridTextColumn>
-                            <DataGridTextColumn Header=" Age" FontSize="16" Binding="{Binding AgeStagiaire}">
+                            <DataGridTextColumn Header=" Age" FontSize="16" Binding="{Binding age_stagiaire}">
                             </DataGridTextColumn>
-                            <DataGridTextColumn Header=" Sexe" FontSize="16" Binding="{Binding SexeStagiaire}">
+                            <DataGridTextColumn Header=" Sexe" FontSize="16" Binding="{Binding sexe_stagiaire}">
                             </DataGridTextColumn>
-                            <DataGridTextColumn Header=" Programme" FontSize="16" Binding="{Binding NomProgramme}">
+                            <DataGridTextColumn Header=" Programme" FontSize="16" Binding="{Binding nom_programme}">
                             </DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
+
+
                 </Grid>
             </TabItem>
         </TabControl>
